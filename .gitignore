@@ -1,0 +1,26 @@
+# Django-specific
+*.sqlite3
+db.sqlite3
+local_settings.py
+.DS_Store
+media/
+static/
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+.pytest_cache/
+.tox/
+env/
+venv/
+.env
+include/
+lib/
+local/
+tmp/
+*.egg-info/
+
+# IDE files
+.idea/
+.vscode/-
