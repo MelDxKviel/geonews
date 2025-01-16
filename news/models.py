@@ -5,12 +5,14 @@ from PIL import Image
 from django.db import models
 from django.contrib.auth.models import User
 
+from django_summernote.fields import SummernoteTextField
+
 
 class News(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
     main_image = models.ImageField(upload_to='news/images/', verbose_name='Изображение')
     preview_image = models.ImageField(upload_to='news/previews/', verbose_name='Превью')
-    content = models.TextField(verbose_name='Текст новости')
+    content = SummernoteTextField(verbose_name='Текст новости')
     publication_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')
     
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор', related_name='news')
